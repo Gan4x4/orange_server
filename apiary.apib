@@ -1,0 +1,40 @@
+FORMAT: 1A
+HOST: http://orange.gan4x4.ru/api/
+
+# Project Orange
+
+
+## Logo to JS Translator [/test/translate?{logo}]
+
+### Translate small block of code. Usable for 'smoke' tests.  [GET]
+
++ Parameters
+    
+    + logo: "fd 40" (string) - Logo code
+
+
++ Response 200 (application/json)
+
+        {
+            "error": 0, - error code
+            "payload": "yield* prims.fd(50);" -  translation result (js)
+            "message": "" - error description, if error code set else empty string
+            "time": 1 - translation time in ms
+        }
+    
+
+### Translate large block of code.  [POST]
+
+
++ Parameters
+    
+    + logo: "fd 40" (string) - Logo code
+
++ Response 200 (application/json)
+
+        {
+            "error": 0, - error code
+            "payload": "yield* prims.fd(50);" -  translation result (js)
+            "message": "" - error description, if error code set else empty string
+            "time": 1 - translation time in ms
+        }
