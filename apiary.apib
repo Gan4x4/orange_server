@@ -4,10 +4,15 @@ HOST: http://orange.gan4x4.ru/api/
 # Project Orange
 
 
-## Logo to JS Translator [/test/translate?{logo}]
-
+## Logo to JS Translator [/test/translate?logo={logo}]
+Return json object where:
+    error - error code or 0 if all OK
+    payload -  translation result (js)
+    message - error description, if error code set, else empty string
+    time - translation time in ms
+    
 ### Translate small block of code. Usable for 'smoke' tests.  [GET]
-
+ 
 + Parameters
     
     + logo: "fd 40" (string) - Logo code
@@ -16,12 +21,12 @@ HOST: http://orange.gan4x4.ru/api/
 + Response 200 (application/json)
 
         {
-            "error": 0, - error code
-            "payload": "yield* prims.fd(50);" -  translation result (js)
-            "message": "" - error description, if error code set else empty string
-            "time": 1 - translation time in ms
+            "error": 0,
+            "message": "",
+            "payload": "yield* prims.fd(40);",
+            "time": 1
         }
-    
+      
 
 ### Translate large block of code.  [POST]
 
@@ -33,8 +38,8 @@ HOST: http://orange.gan4x4.ru/api/
 + Response 200 (application/json)
 
         {
-            "error": 0, - error code
-            "payload": "yield* prims.fd(50);" -  translation result (js)
-            "message": "" - error description, if error code set else empty string
-            "time": 1 - translation time in ms
+            "error": 0,
+            "message": "",
+            "payload": "yield* prims.fd(40);",
+            "time": 1
         }
